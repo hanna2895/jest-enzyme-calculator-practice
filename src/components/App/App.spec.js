@@ -9,6 +9,12 @@ describe('App', () => {
     wrapper = shallow(<App />)
   })
 
+  // this is a snapshot test. you should add it after writing the components.
+  // it will alert you if anything breaks
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it('should render a <div />', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });

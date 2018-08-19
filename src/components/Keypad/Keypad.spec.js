@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Keypad from './Keypad';
+import Key from '../Key/Key';
+import './Keypad.css';
 
 describe('Keypad', () => {
   let wrapper;
@@ -28,5 +30,9 @@ describe('Keypad', () => {
   it('renders the values of operators', () => {
     wrapper.setProps({operators: ['+', '-', '*', '/']});
     expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
+  });
+
+  it('should render an instance of the Key component', () => {
+    expect(wrapper.find('Key').length).toEqual(1);
   });
 });

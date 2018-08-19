@@ -16,6 +16,9 @@ app variables
   --display-text-weight: 400;
   --display-height: 24%;
   --display-width: 92%;
+  /* keypad styles */
+  --keypad-height: 72%;
+  --keypad-width: 96%;
 }
 
 /* media query for tablet or smaller screen */

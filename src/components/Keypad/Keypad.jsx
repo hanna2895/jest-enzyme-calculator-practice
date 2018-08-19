@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Keypad.css';
+import Key from '../Key/Key';
 
 const Keypad = ({callOperator, numbers, operators, setOperator, updateDisplay}) => {
 
@@ -23,6 +25,11 @@ const Keypad = ({callOperator, numbers, operators, setOperator, updateDisplay}) 
       <div className="operators-container">
         {operators}
       </div>
+      <Key
+        keyAction={callOperator}
+        keyType=""
+        keyValue=""
+      />
     </div>
   );
 }

@@ -19,6 +19,16 @@ app variables
   /* keypad styles */
   --keypad-height: 72%;
   --keypad-width: 96%;
+  /* key styles */
+  --number-key-color: #696969;
+  --number-key-color-hover: #3f3f3f;
+  --submit-key-color: #d18800;
+  --submit-key-color-hover: #aa6e00;
+  --action-key-color: #545454;
+  --action-key-color-hover: #2a2a2a;
+  --key-text-color: #d3d3d3;
+  --key-text-size: 3em;
+  --key-text-weight: 700;
 }
 
 /* media query for tablet or smaller screen */
@@ -28,6 +38,7 @@ app variables
     --calculator-height: 100%;
     --calculator-width: 100%;
     --display-text-size: 6em;
+    --key-text-size: 6em;
   }
 }
 

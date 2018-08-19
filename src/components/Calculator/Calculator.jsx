@@ -8,12 +8,14 @@ class Calculator extends Component {
     super(props);
 
     this.state = {
-      dislayValue: '0', // value to be displayed in <Display />
-      numbers: [], // values to be displayed in number <Keys />
-      operators: [], // values to be displayed in operator <Keys />
+      displayValue: '0', // value to be displayed in <Display />
+      numbers: ['9', '8', '7', '6', '5', '4', '3', '2', '1', '.', '0', 'ce'], // values to be displayed in number <Keys />
+      operators: ['/', 'x', '-', '+'], // values to be displayed in operator <Keys />
       selectedOperator: '', // operator selected for math operation
       storedValue: '',
     }
+
+    this.updateDisplay = this.updateDisplay.bind(this);
   }
 
   callOperator() {
@@ -24,8 +26,24 @@ class Calculator extends Component {
     console.log('set operation');
   }
 
-  updateDisplay() {
-    console.log('update display');
+  updateDisplay(value) {
+    let {displayValue} = this.state;
+
+    // prevent multiple occurences of '.'
+    if (value === '.' && displayValue.includes('.')) value = '';
+
+    if (value === 'ce') {
+      // deletes last char in displayValue
+      displayValue = displayValue.substr(0, displayValue.length - 1);
+      // set displayValue to '0' if displayValue is empty string
+      if (displayValue === '') displayValue = '0';
+    } else {
+      // replace displayValue with value if displayValue equal to '0'
+      // else concatenate displayValue and value
+      displayValue === '0' ? displayValue = value : displayValue += value;
+    }
+
+    this.setState({displayValue});
   }
 
   render() {
